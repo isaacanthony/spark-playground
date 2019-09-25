@@ -1,3 +1,6 @@
+build:
+	@docker build -t pyspark .
+
 start:
 	@docker run \
 		--name pyspark \
@@ -5,7 +8,7 @@ start:
 		-e JUPYTER_ENABLE_LAB=yes \
 		-p 8888:8888 \
 		-v $(PWD):/home/jovyan \
-		jupyter/pyspark-notebook
+		pyspark
 
 stop:
 	@docker stop pyspark
@@ -17,7 +20,11 @@ logs:
 run:
 	@docker exec -it pyspark python3 src/main.py
 
-test: test-pylint
+test: test-pytest test-pylint
+
+test-pytest:
+	@echo "Runnning pytest..."
+	@docker run --rm -v $(PWD):/home/jovyan pyspark pytest
 
 test-pylint:
 	@echo "Running pylint..."
