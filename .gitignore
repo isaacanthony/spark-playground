@@ -8,3 +8,4 @@
 .local
 .pytest_cache
 __pycache__
+data/interim/model*

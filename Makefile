@@ -18,7 +18,7 @@ logs:
 	@docker logs pyspark
 
 run:
-	@docker exec -it pyspark python3 src/main.py
+	@docker exec -it pyspark python3 src/main.py $(pipeline)
 
 test: test-pytest test-pylint
 
