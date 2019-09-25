@@ -1,0 +1,14 @@
+name: ci
+on: push
+
+jobs:
+  pylint:
+    name: pylint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: run pylint
+        uses: ./.github/actions/pylint
