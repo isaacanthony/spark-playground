@@ -1,5 +1,7 @@
 *.csv
 *.ipynb
+.cache
+.config
 .ipynb_checkpoints
 .ipython
 .jupyter

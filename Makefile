@@ -24,7 +24,7 @@ test: test-pytest test-pylint
 
 test-pytest:
 	@echo "Runnning pytest..."
-	@docker run --rm -v $(PWD):/home/jovyan pyspark pytest
+	@docker run --rm -e PYTHONDONTWRITEBYTECODE=1 -v $(PWD):/home/jovyan pyspark python -m pytest
 
 test-pylint:
 	@echo "Running pylint..."
