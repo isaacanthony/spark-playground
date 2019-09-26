@@ -7,7 +7,6 @@ from pyspark.sql import DataFrame
 
 COLS = [
     'sepal_length',
-    'sepal_length',
     'sepal_width',
     'petal_length',
     'petal_width',
@@ -28,5 +27,4 @@ class Normalizer(Transformer, DefaultParamsReadable, DefaultParamsWritable):
 
             dframe = scaler.transform(dframe)
 
-        print(dframe.head(5))
         return dframe
