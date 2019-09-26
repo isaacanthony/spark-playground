@@ -21,7 +21,7 @@ def main() -> None:
         model.save(f"data/interim/model {datetime.now()}")
 
     if pipeline in ['all', 'test']:
-        None
+        print('test pipeline')
 
 
 def healthy() -> None:
