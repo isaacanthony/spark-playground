@@ -18,13 +18,14 @@ logs:
 	@docker logs pyspark
 
 run:
+	@docker exec -it pyspark pip install --no-cache-dir .
 	@docker exec -it pyspark python3 src/main.py $(pipeline)
 
 test: test-pytest test-pylint
 
 test-pytest:
 	@echo "Runnning pytest..."
-	@docker run --rm -e PYTHONDONTWRITEBYTECODE=1 -v $(PWD):/home/jovyan pyspark python -m pytest
+	@docker run --rm -e PYTHONDONTWRITEBYTECODE=1 -v $(PWD):/home/jovyan pyspark python -m pytest --disable-pytest-warnings
 
 test-pylint:
 	@echo "Running pylint..."
