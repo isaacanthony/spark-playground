@@ -1,9 +1,9 @@
 """Entrypoint for pipelines"""
 from datetime import datetime
+from sys import argv
 from pyspark.sql import SparkSession
 from src.helpers.dataframe import read_csv
 from src.pipelines.train import fit as train
-from sys import argv
 
 
 def main() -> None:

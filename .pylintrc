@@ -1,0 +1,6 @@
+[MESSAGES CONTROL]
+disable=
+  import-error,
+  no-name-in-module,
+  no-self-use,
+  too-few-public-methods,
